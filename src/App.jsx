@@ -1,11 +1,23 @@
-import './App.css'
+import { Canvas } from "@react-three/fiber";
+import "./App.css";
 
-function App() {s
+function App() {
   return (
-    <div className="App">
-      
+    <div className="canvas-container">
+      <Canvas>
+        <ambientLight intensity={0.1} />
+        <directionalLight color="red" position={[0, 0, 5]} />
+        <mesh>
+          <sphereBufferGeometry />
+          <meshBasicMaterial color="orange" />
+        </mesh>
+        <mesh position={[1, 0, 0]}>
+          <boxBufferGeometry />
+          <meshBasicMaterial color="red" />
+        </mesh>
+      </Canvas>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
