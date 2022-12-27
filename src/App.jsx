@@ -11,6 +11,10 @@ function App() {
           <sphereBufferGeometry />
           <meshBasicMaterial color="orange" />
         </mesh>
+        <mesh position={[1, 0, 0]}>
+          <boxBufferGeometry />
+          <meshBasicMaterial color="red" />
+        </mesh>
       </Canvas>
     </div>
   );
