@@ -3,6 +3,8 @@ import * as THREE from "three";
 import meshes from "./src/meshes";
 import rendererFunction from "./src/renderer";
 import cam from "./src/camera";
+import models from "./src/models";
+import lights from "./src/lights";
 
 // note: Define Variables
 const mouse = new THREE.Vector2();
@@ -36,9 +38,15 @@ window.addEventListener("resize", () => {
   renderer.setSize(width, height);
 });
 
-// note: meshes
+// note: Meshes
 const cube = meshes.cubeMesh();
 scene.add(cube);
+
+// note: Models
+models.roomModel(scene, renderer, camera);
+
+// note: Lights
+lights.wallLight(scene);
 
 // note: Animate function
 function animate() {
@@ -57,5 +65,3 @@ function animate() {
 
 // note: Call animate function
 animate();
-
-// note: L bozo
