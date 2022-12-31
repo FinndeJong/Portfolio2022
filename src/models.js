@@ -4,7 +4,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 // note: Models
 function roomModel(scene, renderer, camera) {
   const loader = new GLTFLoader();
-  loader.load("./assets/models/RoomV4.glb", (gltf) => {
+  loader.load("./assets/models/RoomV9.glb", (gltf) => {
+    gltf.scene.position.set(4, 0, 2);
     scene.add(gltf.scene);
     renderer.render(scene, camera);
   });

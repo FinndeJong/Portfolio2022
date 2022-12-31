@@ -3,7 +3,7 @@ import * as THREE from "three";
 
 // note: Lights
 function wallLight(scene) {
-  const pointLight = new THREE.PointLight(0xffd7b5, 3, 100);
+  const pointLight = new THREE.PointLight(0xffd7b5, 5, 100);
   pointLight.position.set(0, 10, 0);
   scene.add(pointLight);
 

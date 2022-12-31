@@ -55,6 +55,7 @@ function animate() {
 
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
+  cube.rotation.z += 0.01;
 
   target.x = (1 - mouse.x) * 0.0005;
   target.y = (1 - mouse.y) * 0.0005;
