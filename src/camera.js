@@ -7,6 +7,6 @@ export default function cam() {
     0.1,
     1000
   );
-  camera.position.z = 2;
+  camera.position.z = 1;
   return camera;
 }
