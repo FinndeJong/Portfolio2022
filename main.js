@@ -3,6 +3,8 @@ import * as THREE from "three";
 import meshes from "./src/meshes";
 import rendererFunction from "./src/renderer";
 import cam from "./src/camera";
+import models from "./src/models";
+import lights from "./src/lights";
 
 // note: Define Variables
 const mouse = new THREE.Vector2();
@@ -36,20 +38,28 @@ window.addEventListener("resize", () => {
   renderer.setSize(width, height);
 });
 
-// note: meshes
+// note: Meshes
 const cube = meshes.cubeMesh();
-scene.add(cube);
+// scene.add(cube);
+
+// note: Models
+models.roomModel(scene, renderer, camera);
+
+// note: Lights
+lights.wallLight(scene);
+lights.windowLight(scene);
 
 // note: Animate function
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  // cube.rotation.x += 0.01;
+  // cube.rotation.y += 0.01;
+  // cube.rotation.z += 0.01;
 
-  target.x = (1 - mouse.x) * 0.0005;
-  target.y = (1 - mouse.y) * 0.0005;
+  target.x = (1 - mouse.x) * 0.0004;
+  target.y = (1 - mouse.y) * 0.0004;
 
   camera.rotation.x += 0.05 * (target.y - camera.rotation.x);
   camera.rotation.y += 0.05 * (target.x - camera.rotation.y);
@@ -57,5 +67,3 @@ function animate() {
 
 // note: Call animate function
 animate();
-
-// note: L bozo
