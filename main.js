@@ -54,9 +54,11 @@ function animate() {
   sphere.rotation.x += 0.01;
   sphere.rotation.y += 0.01;
 
+  // 0.0005 is how far the camera can move
   target.x = (1 - mouse.x) * 0.0005;
   target.y = (1 - mouse.y) * 0.0005;
 
+  // 0.05 is the speed at which the camera moves
   camera.rotation.x += 0.05 * (target.y - camera.rotation.x);
   camera.rotation.y += 0.05 * (target.x - camera.rotation.y);
 }
