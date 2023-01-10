@@ -3,6 +3,7 @@ import * as THREE from "three";
 import meshes from "./src/meshes";
 import rendererFunction from "./src/renderer";
 import cam from "./src/camera";
+import lights from "./src/lights";
 
 // note: Define Variables
 const mouse = new THREE.Vector2();
@@ -13,6 +14,7 @@ const windowHalf = new THREE.Vector2(
 );
 // note: Scene
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xdba15e);
 
 // note: Camera
 const camera = cam();
@@ -39,6 +41,10 @@ window.addEventListener("resize", () => {
 // note: meshes
 const cube = meshes.cubeMesh();
 scene.add(cube);
+
+// note: lights
+const ambientLight = lights.ambientLight(scene);
+scene.add(ambientLight);
 
 // note: Animate function
 function animate() {
