@@ -5,6 +5,7 @@ import * as THREE from "three";
 function cubeMesh() {
   const geometry = new THREE.BoxGeometry(1, 1, 1);
   const material = new THREE.MeshStandardMaterial({ color: 0x3c00ff });
+  material.wireframe = true;
   const cube = new THREE.Mesh(geometry, material);
   return cube;
 }
