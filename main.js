@@ -39,8 +39,8 @@ window.addEventListener("resize", () => {
 });
 
 // note: meshes
-const cube = meshes.cubeMesh();
-scene.add(cube);
+const sphere = meshes.sphereMesh();
+scene.add(sphere);
 
 // note: lights
 const ambientLight = lights.ambientLight(scene);
@@ -51,8 +51,8 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  sphere.rotation.x += 0.01;
+  sphere.rotation.y += 0.01;
 
   target.x = (1 - mouse.x) * 0.0005;
   target.y = (1 - mouse.y) * 0.0005;
