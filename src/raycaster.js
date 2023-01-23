@@ -2,7 +2,7 @@
 function raycaster(raycast, pointer, camera, scene) {
   raycast.setFromCamera(pointer, camera);
   const intersects = raycast.intersectObjects(scene.children);
-  const tempClickable = ["Screen", "Screen001", "Screen002"];
+  const tempClickable = ['Screen', 'Screen001', 'Screen002'];
 
   if (intersects.length > 0) {
     if (tempClickable.includes(intersects[0].object.name)) {
@@ -10,7 +10,7 @@ function raycaster(raycast, pointer, camera, scene) {
       return firstIntersect;
     }
   }
-  return "";
+  return '';
 }
 
 // note: Export object

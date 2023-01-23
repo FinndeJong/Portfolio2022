@@ -1,12 +1,12 @@
-import "./style.css";
-import * as THREE from "three";
-import meshes from "./src/meshes";
-import rendererFunction from "./src/renderer";
-import cam from "./src/camera";
-import models from "./src/models";
-import lights from "./src/lights";
-import raycasting from "./src/raycaster";
-import setCameraInteractable from "./src/functions/setCameraInteractable";
+import './style.css';
+import * as THREE from 'three';
+import meshes from './src/meshes';
+import rendererFunction from './src/renderer';
+import cam from './src/camera';
+import models from './src/models';
+import lights from './src/lights';
+import raycasting from './src/raycaster';
+import setCameraInteractable from './src/functions/setCameraInteractable';
 
 // note: Define Variables
 let activeInteractable;
@@ -26,7 +26,7 @@ const scene = new THREE.Scene();
 const camera = cam();
 
 // note: Mouse movement eventlistener
-window.addEventListener("mousemove", (event) => {
+window.addEventListener('mousemove', (event) => {
   mouse.x = event.clientX - windowHalf.x;
   mouse.y = event.clientY - windowHalf.y;
 
@@ -38,7 +38,7 @@ window.addEventListener("mousemove", (event) => {
 const renderer = rendererFunction();
 
 // note: Window resizer eventlistener
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
@@ -50,8 +50,8 @@ window.addEventListener("resize", () => {
 });
 
 // note: Click eventlistener
-window.addEventListener("click", () => {
-  if (activeInteractable !== "") {
+window.addEventListener('click', () => {
+  if (activeInteractable !== '') {
     allowCameraMovement = false;
     // remove console log
     console.log(`Clicked: ${activeInteractable.name}`);
@@ -62,7 +62,7 @@ window.addEventListener("click", () => {
     interactablePosition.setFromMatrixPosition(activeInteractable.matrixWorld);
 
     switch (activeInteractable.name) {
-      case "Screen":
+      case 'Screen':
         interactableCameraPosition.setFromMatrixPosition(
           scene.children[4].children[9].matrixWorld
         );
@@ -72,7 +72,7 @@ window.addEventListener("click", () => {
           interactablePosition
         );
         break;
-      case "Screen001":
+      case 'Screen001':
         interactableCameraPosition.setFromMatrixPosition(
           scene.children[4].children[17].matrixWorld
         );
@@ -82,7 +82,7 @@ window.addEventListener("click", () => {
           interactablePosition
         );
         break;
-      case "Screen002":
+      case 'Screen002':
         interactableCameraPosition.setFromMatrixPosition(
           scene.children[4].children[13].matrixWorld
         );
@@ -94,17 +94,17 @@ window.addEventListener("click", () => {
         );
         break;
       default:
-        console.log("An error occured");
+        console.log('An error occured');
         break;
     }
   }
 });
 
-window.addEventListener("keyup", (event) => {
+window.addEventListener('keyup', (event) => {
   // remove: console.log
   console.log(event.key);
   console.log(scene.children[4].children);
-  if (event.key === "Escape") {
+  if (event.key === 'Escape') {
     camera.position.z = 0.5;
     camera.position.y = 0;
     camera.position.x = 0;
@@ -136,9 +136,6 @@ function animate() {
     activeInteractable
   );
   // remove commented code
-  // if (activeInteractable !== "") {
-  //   console.log(activeInteractable);
-  // }
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 
