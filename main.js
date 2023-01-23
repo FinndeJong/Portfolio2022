@@ -1,6 +1,5 @@
 import './style.css';
 import * as THREE from 'three';
-import meshes from './src/meshes';
 import rendererFunction from './src/renderer';
 import cam from './src/camera';
 import models from './src/models';
@@ -102,8 +101,6 @@ window.addEventListener('click', () => {
 
 window.addEventListener('keyup', (event) => {
   // remove: console.log
-  console.log(event.key);
-  console.log(scene.children[4].children);
   if (event.key === 'Escape') {
     camera.position.z = 0.5;
     camera.position.y = 0;
@@ -114,10 +111,6 @@ window.addEventListener('keyup', (event) => {
 });
 
 // note: Meshes
-const cube = meshes.cubeMesh();
-// remove console log
-console.count(cube);
-// scene.add(cube);
 
 // note: Models
 models.roomModel(scene, renderer, camera);
